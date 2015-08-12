@@ -29,6 +29,7 @@
 		BA47D17C1B7AE192001596A3 /* Levels.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47D17B1B7AE192001596A3 /* Levels.m */; };
 		BA47D17F1B7B12B4001596A3 /* shake.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA47D17D1B7B12B4001596A3 /* shake.caf */; };
 		BA47D1801B7B12B4001596A3 /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA47D17E1B7B12B4001596A3 /* explosion_small.caf */; };
+		BA47D1821B7B2327001596A3 /* wood _texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BA47D1811B7B2327001596A3 /* wood _texture.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		BA47D17B1B7AE192001596A3 /* Levels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Levels.m; sourceTree = "<group>"; };
 		BA47D17D1B7B12B4001596A3 /* shake.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = shake.caf; path = ../shake.caf; sourceTree = "<group>"; };
 		BA47D17E1B7B12B4001596A3 /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_small.caf; path = ../explosion_small.caf; sourceTree = "<group>"; };
+		BA47D1811B7B2327001596A3 /* wood _texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "wood _texture.jpg"; path = "../wood _texture.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				BA47D13D1B796E7F001596A3 /* GameViewController.h */,
 				BA47D13E1B796E7F001596A3 /* GameViewController.m */,
 				BA47D13B1B796E7F001596A3 /* GameScene.sks */,
+				BA47D1811B7B2327001596A3 /* wood _texture.jpg */,
 				BA47D17D1B7B12B4001596A3 /* shake.caf */,
 				BA47D17E1B7B12B4001596A3 /* explosion_small.caf */,
 				BA47D1401B796E7F001596A3 /* Main.storyboard */,
@@ -272,6 +275,7 @@
 				BA47D1471B796E7F001596A3 /* LaunchScreen.xib in Resources */,
 				BA47D1801B7B12B4001596A3 /* explosion_small.caf in Resources */,
 				BA47D1441B796E7F001596A3 /* Images.xcassets in Resources */,
+				BA47D1821B7B2327001596A3 /* wood _texture.jpg in Resources */,
 				BA47D13C1B796E7F001596A3 /* GameScene.sks in Resources */,
 				BA47D1421B796E7F001596A3 /* Main.storyboard in Resources */,
 			);

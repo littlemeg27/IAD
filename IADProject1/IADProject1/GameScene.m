@@ -41,7 +41,9 @@ CMMotionManager *motion; //Gets in the four types of motion
     if (self = [super initWithSize:size])
     {
         /* Setup your scene here */
-        self.backgroundColor = [SKColor brownColor];
+        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"featherBackground.jpg"];
+        background.position = CGPointMake(self.size.width/2, self.size.height/2);
+        
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = edgeCategory;
         self.physicsWorld.contactDelegate = self; //Might need for later
