@@ -303,14 +303,12 @@ CMMotionManager *motion; //Gets in the four types of motion
     SKNode *hole2 = [SKNode node];
     CGPoint ballPoint2 = CGPointMake(230,510);
     hole2.position = ballPoint2;
-    hole2.position = ballPoint1;
     hole2.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole2];
     
     SKNode *hole3 = [SKNode node];
     CGPoint ballPoint3 = CGPointMake(180,910);
     hole3.position = ballPoint3;
-    hole3.position = ballPoint1;
     hole3.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole3];
     
