@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "Credits.h"
 #import "Tutorial.h"
+#import "Levels.h"
 
 @interface MainMenu ()
 
@@ -17,6 +18,7 @@
 @property (nonatomic) SKLabelNode *playLabel;
 @property (nonatomic) SKLabelNode *creditsLabel;
 @property (nonatomic) SKLabelNode *instructionsLabel;
+@property (nonatomic) SKLabelNode *levelsLabel;
 
 @end
 
@@ -58,6 +60,14 @@
         self.instructionsLabel.name = @"button3";
         self.instructionsLabel.position = CGPointMake(CGRectGetMidX(self.frame),400);
         [self addChild:self.instructionsLabel];
+        
+        self.levelsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.levelsLabel.text = @"Levels";
+        self.levelsLabel.fontColor = [SKColor whiteColor];
+        self.levelsLabel.fontSize = 30;
+        self.levelsLabel.name = @"button4";
+        self.levelsLabel.position = CGPointMake(CGRectGetMidX(self.frame),300);
+        [self addChild:self.levelsLabel];
     }
     return self;
 }
@@ -83,6 +93,11 @@
         {
             Tutorial *tutorial = [Tutorial sceneWithSize:self.size];
             [self.view presentScene:tutorial transition:[SKTransition fadeWithDuration:1.0]];
+        }
+        else if  ([node.name isEqualToString:@"button4"])
+        {
+            Levels *levels = [Levels sceneWithSize:self.size];
+            [self.view presentScene:levels transition:[SKTransition fadeWithDuration:1.0]];
         }
     }
     

@@ -1,12 +1,13 @@
 //
-//  GameScene2.h
+//  Levels.h
 //  IADProject1
 //
-//  Created by Brenna Pavlinchak on 8/10/15.
+//  Created by Brenna Pavlinchak on 8/11/15.
 //  Copyright (c) 2015 Brenna Pavlinchak. All rights reserved.
 //
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameScene2 : SKScene <SKPhysicsContactDelegate>
+@interface Levels : SKScene
+
 @end

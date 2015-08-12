@@ -10,6 +10,7 @@
 #import "MainMenu.h"
 
 @implementation Credits
+
 -(instancetype)initWithSize:(CGSize)size
 {
     if(self = [super initWithSize:size])

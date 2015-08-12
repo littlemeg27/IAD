@@ -26,6 +26,9 @@
 		BA47D1731B7991C3001596A3 /* GameScene4.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47D1721B7991C3001596A3 /* GameScene4.m */; };
 		BA47D1761B7991F2001596A3 /* GameScene5.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47D1751B7991F2001596A3 /* GameScene5.m */; };
 		BA47D1791B799207001596A3 /* GameScene6.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47D1781B799207001596A3 /* GameScene6.m */; };
+		BA47D17C1B7AE192001596A3 /* Levels.m in Sources */ = {isa = PBXBuildFile; fileRef = BA47D17B1B7AE192001596A3 /* Levels.m */; };
+		BA47D17F1B7B12B4001596A3 /* shake.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA47D17D1B7B12B4001596A3 /* shake.caf */; };
+		BA47D1801B7B12B4001596A3 /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA47D17E1B7B12B4001596A3 /* explosion_small.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,10 @@
 		BA47D1751B7991F2001596A3 /* GameScene5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene5.m; sourceTree = "<group>"; };
 		BA47D1771B799207001596A3 /* GameScene6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene6.h; sourceTree = "<group>"; };
 		BA47D1781B799207001596A3 /* GameScene6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene6.m; sourceTree = "<group>"; };
+		BA47D17A1B7AE192001596A3 /* Levels.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Levels.h; sourceTree = "<group>"; };
+		BA47D17B1B7AE192001596A3 /* Levels.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Levels.m; sourceTree = "<group>"; };
+		BA47D17D1B7B12B4001596A3 /* shake.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = shake.caf; path = ../shake.caf; sourceTree = "<group>"; };
+		BA47D17E1B7B12B4001596A3 /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_small.caf; path = ../explosion_small.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +143,8 @@
 				BA47D1691B798059001596A3 /* Tutorial.m */,
 				BA47D1651B797FBF001596A3 /* Credits.h */,
 				BA47D1661B797FBF001596A3 /* Credits.m */,
+				BA47D17A1B7AE192001596A3 /* Levels.h */,
+				BA47D17B1B7AE192001596A3 /* Levels.m */,
 				BA47D15C1B797E3B001596A3 /* GameWinScene.h */,
 				BA47D15D1B797E3B001596A3 /* GameWinScene.m */,
 				BA47D15F1B797E85001596A3 /* GameOverScene.h */,
@@ -143,6 +152,8 @@
 				BA47D13D1B796E7F001596A3 /* GameViewController.h */,
 				BA47D13E1B796E7F001596A3 /* GameViewController.m */,
 				BA47D13B1B796E7F001596A3 /* GameScene.sks */,
+				BA47D17D1B7B12B4001596A3 /* shake.caf */,
+				BA47D17E1B7B12B4001596A3 /* explosion_small.caf */,
 				BA47D1401B796E7F001596A3 /* Main.storyboard */,
 				BA47D1431B796E7F001596A3 /* Images.xcassets */,
 				BA47D1451B796E7F001596A3 /* LaunchScreen.xib */,
@@ -257,7 +268,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA47D17F1B7B12B4001596A3 /* shake.caf in Resources */,
 				BA47D1471B796E7F001596A3 /* LaunchScreen.xib in Resources */,
+				BA47D1801B7B12B4001596A3 /* explosion_small.caf in Resources */,
 				BA47D1441B796E7F001596A3 /* Images.xcassets in Resources */,
 				BA47D13C1B796E7F001596A3 /* GameScene.sks in Resources */,
 				BA47D1421B796E7F001596A3 /* Main.storyboard in Resources */,
@@ -282,6 +295,7 @@
 				BA47D13F1B796E7F001596A3 /* GameViewController.m in Sources */,
 				BA47D1671B797FBF001596A3 /* Credits.m in Sources */,
 				BA47D1731B7991C3001596A3 /* GameScene4.m in Sources */,
+				BA47D17C1B7AE192001596A3 /* Levels.m in Sources */,
 				BA47D16D1B799134001596A3 /* GameScene2.m in Sources */,
 				BA47D1371B796E7F001596A3 /* AppDelegate.m in Sources */,
 				BA47D1761B7991F2001596A3 /* GameScene5.m in Sources */,
@@ -488,6 +502,7 @@
 				BA47D1581B796E7F001596A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA47D1591B796E7F001596A3 /* Build configuration list for PBXNativeTarget "IADProject1Tests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +511,7 @@
 				BA47D15B1B796E7F001596A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
