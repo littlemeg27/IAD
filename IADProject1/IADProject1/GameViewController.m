@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "MainMenu.h"
 #import "GameScene5.h"
+#import "GameScene6.h"
 
 @implementation SKScene (Unarchive)
 
@@ -47,8 +48,8 @@
     skView.ignoresSiblingOrder = YES;
     
     // Create and configure the scene.
-    GameScene5 *scene = [GameScene5 sceneWithSize:skView.bounds.size];
-    //MainMenu *scene = [MainMenu sceneWithSize:skView.bounds.size];
+    //GameScene6 *scene = [GameScene6 sceneWithSize:skView.bounds.size];
+    MainMenu *scene = [MainMenu sceneWithSize:skView.bounds.size];
     scene.scaleMode = SKSceneScaleModeAspectFill;
     
     // Present the scene.
