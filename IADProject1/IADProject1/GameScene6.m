@@ -213,7 +213,7 @@ static const uint32_t winCategory = 32;
 
 -(void) addHoles:(CGSize) size
 {
-    float radius = 32;
+    /*float radius = 32;
     SKShapeNode *hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
     hole1.position = ballPoint1;
@@ -285,12 +285,12 @@ static const uint32_t winCategory = 32;
     hole8.strokeColor = [SKColor blackColor]; //Hole 8
     hole8.physicsBody.categoryBitMask = holeCategory;
     hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:hole8];
+    [self addChild:hole8];*/
 }
 
 -(void) addNodes:(CGSize) size
 {
-    float radius = 28;
+    /*float radius = 28;
     SKNode *hole1 = [SKNode node];
     hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
@@ -348,7 +348,7 @@ static const uint32_t winCategory = 32;
     SKNode *endBox = [SKNode node];
     endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(140, 100)];
     endBox.physicsBody.categoryBitMask = winCategory;
-    [self addChild: endBox];
+    [self addChild: endBox];*/
     
 }
 
@@ -441,19 +441,6 @@ static const uint32_t winCategory = 32;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
-    /*for (UITouch *touch in touches)
-     {
-     self.pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.pause.frame.size];
-     self.pause.physicsBody.dynamic =  NO;
-     CGPoint pausePoint = CGPointMake(300,250);
-     self.pause.position = pausePoint;
-     
-     if([self.gameIsPaused containsPoint:pausePoint])
-     {
-     CGPoint pausePoint = [touch locationInNode:self];
-     self.scene.view.paused = YES;
-     }
-     }*/
     
 }
 
@@ -470,7 +457,17 @@ static const uint32_t winCategory = 32;
         self.startTime = currentTime;
         self.startGamePlay = NO;
     }
-    self.countDown.text = [NSString stringWithFormat:@"Time: %i", (int)(currentTime-self.startTime)];
+    
+    int countDownInt = 45.0 -(int)(currentTime-self.startTime);
+    if(countDownInt > 0)
+    {
+        self.countDown.text = [NSString stringWithFormat:@"%i", countDownInt];
+    }
+    else if(countDownInt == 0) //When the counter reaches 0
+    {
+        GameOverScene *gameOver = [GameOverScene sceneWithSize:self.size];
+        [self.view presentScene:gameOver transition:[SKTransition fadeWithDuration:2.0]]; //What happens when you lose
+    }
 }
 
 @end

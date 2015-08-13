@@ -474,7 +474,17 @@ static const uint32_t winCategory = 32;
         self.startTime = currentTime;
         self.startGamePlay = NO;
     }
-    self.countDown.text = [NSString stringWithFormat:@"Time: %i", (int)(currentTime-self.startTime)];
+    
+    int countDownInt = 45.0 -(int)(currentTime-self.startTime);
+    if(countDownInt > 0)
+    {
+        self.countDown.text = [NSString stringWithFormat:@"%i", countDownInt];
+    }
+    else if(countDownInt == 0)
+    {
+        GameOverScene *gameOver = [GameOverScene sceneWithSize:self.size];
+        [self.view presentScene:gameOver transition:[SKTransition fadeWithDuration:2.0]]; //What happens when you lose
+    }
 }
 
 @end

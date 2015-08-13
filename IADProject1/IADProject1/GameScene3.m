@@ -51,26 +51,17 @@ CMMotionManager *motion; //Gets in the four types of motion
         SKLabelNode *startLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         startLabel.text = @"Start";
         startLabel.fontSize = 20;
-        startLabel.position = CGPointMake(70, 900);
+        startLabel.position = CGPointMake(725, 910);
         
         SKLabelNode *endLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         endLabel.text = @"End";
         endLabel.fontSize = 20;
-        endLabel.position = CGPointMake(70, 50);
+        endLabel.position = CGPointMake(150, 50);
         
         self.countDown = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.countDown.fontSize = 25;
         self.countDown.position = CGPointMake(120,975);
         self.countDown.fontColor = [SKColor whiteColor];
-        
-        //self.anchorPoint = CGPointMake (0.5,0.5);
-        
-        /*SKNode *myWorld = [SKNode node];
-         [self addChild:myWorld];
-         
-         SKNode *camera = [SKNode node];
-         camera.name = @"camera";
-         [myWorld addChild:camera];*/
         
         [self addChild:self.countDown];
         [self addChild:startLabel];
@@ -359,8 +350,8 @@ CMMotionManager *motion; //Gets in the four types of motion
      hole6.physicsBody.contactTestBitMask = wallCategory | ballCategory;
      [self addChild:hole6];
      
-     /*SKShapeNode *hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-     CGPoint ballPoint7 = CGPointMake(590,150);
+     SKShapeNode *hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+     CGPoint ballPoint7 = CGPointMake(30,915);
      hole7.position = ballPoint7;
      hole7.fillColor = [SKColor grayColor];
      hole7.strokeColor = [SKColor blackColor]; //Hole 7
@@ -369,76 +360,76 @@ CMMotionManager *motion; //Gets in the four types of motion
      [self addChild:hole7];
      
      SKShapeNode *hole8 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-     CGPoint ballPoint8 = CGPointMake(180,190);
+     CGPoint ballPoint8 = CGPointMake(135,825);
      hole8.position = ballPoint8;
      hole8.fillColor = [SKColor grayColor];
      hole8.strokeColor = [SKColor blackColor]; //Hole 8
      hole8.physicsBody.categoryBitMask = holeCategory;
      hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-     [self addChild:hole8];*/
+     [self addChild:hole8];
 }
 
 -(void) addNodes:(CGSize) size
 {
-    /*float radius = 28;
+     float radius = 22;
      SKNode *hole1 = [SKNode node];
      hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-     CGPoint ballPoint1 = CGPointMake(35,510);
+     CGPoint ballPoint1 = CGPointMake(50,290);
      hole1.position = ballPoint1;
      hole1.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole1];
      
      SKNode *hole2 = [SKNode node];
-     CGPoint ballPoint2 = CGPointMake(230,510);
+     CGPoint ballPoint2 = CGPointMake(250,330);
      hole2.position = ballPoint2;
      hole2.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole2];
      
      SKNode *hole3 = [SKNode node];
-     CGPoint ballPoint3 = CGPointMake(180,910);
+     CGPoint ballPoint3 = CGPointMake(630,730);
      hole3.position = ballPoint3;
      hole3.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole3];
      
      SKNode *hole4 = [SKNode node];
      hole4.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-     CGPoint ballPoint4 = CGPointMake(730,910);
+     CGPoint ballPoint4 = CGPointMake(735,130);
      hole4.position = ballPoint4;
      hole4.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole4];
      
      SKNode *hole5 = [SKNode node];
      hole5.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-     CGPoint ballPoint5 = CGPointMake(310,390);
+     CGPoint ballPoint5 = CGPointMake(370,225);
      hole5.position = ballPoint5;
      hole5.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole5];
      
      SKNode *hole6 = [SKNode node];
      hole6.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-     CGPoint ballPoint6 = CGPointMake(590,455);
+     CGPoint ballPoint6 = CGPointMake(630,245);
      hole6.position = ballPoint6;
      hole6.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole6];
      
      SKNode *hole7 = [SKNode node];
      hole7.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-     CGPoint ballPoint7 = CGPointMake(590,150);
+     CGPoint ballPoint7 =CGPointMake(30,915);
      hole7.position = ballPoint7;
      hole7.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole7];
      
      SKNode *hole8 = [SKNode node];
      hole8.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-     CGPoint ballPoint8 = CGPointMake(180,190);
+     CGPoint ballPoint8 = CGPointMake(135,825);
      hole8.position = ballPoint8;
      hole8.physicsBody.categoryBitMask = hole2Category;
      [self addChild: hole8];
      
      SKNode *endBox = [SKNode node];
-     endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(140, 100)];
+     endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(100,75) toPoint:CGPointMake(190, 75)];
      endBox.physicsBody.categoryBitMask = winCategory;
-     [self addChild: endBox]; */
+     [self addChild: endBox];
     
 }
 
@@ -446,7 +437,7 @@ CMMotionManager *motion; //Gets in the four types of motion
 {
     self.ball.hidden = NO;   //reset ball position for new game
     self.ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.ball.frame.size.width/2];
-    CGPoint ballPoint = CGPointMake(75,875);
+    CGPoint ballPoint = CGPointMake(750,900);
     self.ball.position = ballPoint;
     self.ball.physicsBody.dynamic = YES; //Not sitting still
     self.ball.physicsBody.affectedByGravity = NO; //Not affected

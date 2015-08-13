@@ -441,19 +441,6 @@ static const uint32_t winCategory = 32;
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     /* Called when a touch begins */
-    /*for (UITouch *touch in touches)
-     {
-     self.pause.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.pause.frame.size];
-     self.pause.physicsBody.dynamic =  NO;
-     CGPoint pausePoint = CGPointMake(300,250);
-     self.pause.position = pausePoint;
-     
-     if([self.gameIsPaused containsPoint:pausePoint])
-     {
-     CGPoint pausePoint = [touch locationInNode:self];
-     self.scene.view.paused = YES;
-     }
-     }*/
     
 }
 

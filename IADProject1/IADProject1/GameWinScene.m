@@ -7,7 +7,7 @@
 //
 
 #import "GameWinScene.h"
-#import "GameScene.h"
+#import "Levels.h"
 
 @implementation GameWinScene
 
@@ -36,8 +36,8 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    GameScene *gameScene = [GameScene sceneWithSize:self.size];
-    [self.view presentScene:gameScene transition:[SKTransition fadeWithDuration:1.0]];
+    Levels *LevelsScene = [Levels sceneWithSize:self.size];
+    [self.view presentScene:LevelsScene transition:[SKTransition fadeWithDuration:1.0]];
 }
 
 @end

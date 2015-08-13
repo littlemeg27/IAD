@@ -61,15 +61,6 @@ static const uint32_t winCategory = 32;
         self.countDown.position = CGPointMake(120,975);
         self.countDown.fontColor = [SKColor whiteColor];
         
-        //self.anchorPoint = CGPointMake (0.5,0.5);
-        
-        /*SKNode *myWorld = [SKNode node];
-         [self addChild:myWorld];
-         
-         SKNode *camera = [SKNode node];
-         camera.name = @"camera";
-         [myWorld addChild:camera];*/
-        
         [self addChild:self.countDown];
         [self addChild:startLabel];
         [self addChild:endLabel];
@@ -213,7 +204,7 @@ static const uint32_t winCategory = 32;
 
 -(void) addHoles:(CGSize) size
 {
-    float radius = 32;
+    /*float radius = 32;
     SKShapeNode *hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
     hole1.position = ballPoint1;
@@ -285,12 +276,12 @@ static const uint32_t winCategory = 32;
     hole8.strokeColor = [SKColor blackColor]; //Hole 8
     hole8.physicsBody.categoryBitMask = holeCategory;
     hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:hole8];
+    [self addChild:hole8];*/
 }
 
 -(void) addNodes:(CGSize) size
 {
-    float radius = 28;
+    /*float radius = 28;
     SKNode *hole1 = [SKNode node];
     hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
@@ -348,7 +339,7 @@ static const uint32_t winCategory = 32;
     SKNode *endBox = [SKNode node];
     endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(140, 100)];
     endBox.physicsBody.categoryBitMask = winCategory;
-    [self addChild: endBox];
+    [self addChild: endBox];*/
     
 }
 
