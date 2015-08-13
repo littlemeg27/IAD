@@ -41,7 +41,7 @@ CMMotionManager *motion; //Gets in the four types of motion
     if (self = [super initWithSize:size])
     {
         /* Setup your scene here */
-        self.backgroundColor = [SKColor brownColor];
+        self.backgroundColor = [SKColor whiteColor];
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = edgeCategory;
         self.physicsWorld.contactDelegate = self; //Might need for later
@@ -115,55 +115,55 @@ CMMotionManager *motion; //Gets in the four types of motion
     topRight.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:topRight];
     
-     SKSpriteNode *topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 50)];
-     [topLeft setPosition:CGPointMake(450, 860)]; //Vertical topLeft line
+     SKSpriteNode *topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 75)];
+     [topLeft setPosition:CGPointMake(101, 827)]; //Vertical topLeft line
      topLeft.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topLeft.frame.size];
      topLeft.physicsBody.dynamic =  NO;
      topLeft.physicsBody.categoryBitMask = wallCategory;
      topLeft.physicsBody.contactTestBitMask = wallCategory | ballCategory;
      [self addChild:topLeft];
      
-     /*SKSpriteNode *topLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
-     [topLeft setPosition:CGPointMake(140, 775)]; //Vertical top left line
-     topLeft.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topLeft.frame.size];
-     topLeft.physicsBody.dynamic =  NO;
-     topLeft.physicsBody.categoryBitMask = wallCategory;
-     topLeft.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-     [self addChild:topLeft];
+     SKSpriteNode *middleTop = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(490, 8)];
+     [middleTop setPosition:CGPointMake(435, 780)]; //Horizontal top middle line
+     middleTop.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:middleTop.frame.size];
+     middleTop.physicsBody.dynamic =  NO;
+     middleTop.physicsBody.categoryBitMask = wallCategory;
+     middleTop.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+     [self addChild:middleTop];
      
-     SKSpriteNode *bottomRight = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 700)];
-     [bottomRight setPosition:CGPointMake(630, 150)]; //Vertical bottom right line
-     bottomRight.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomRight.frame.size];
-     bottomRight.physicsBody.dynamic =  NO;
-     bottomRight.physicsBody.categoryBitMask = wallCategory;
-     bottomRight.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-     [self addChild:bottomRight];
+     SKSpriteNode *topRightVertical = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 100)];
+     [topRightVertical setPosition:CGPointMake(680, 734)]; //Vertical top right line
+     topRightVertical.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topRightVertical.frame.size];
+     topRightVertical.physicsBody.dynamic =  NO;
+     topRightVertical.physicsBody.categoryBitMask = wallCategory;
+     topRightVertical.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+     [self addChild:topRightVertical];
      
-     SKSpriteNode *bottomMiddle2 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(330, 8)];
-     [bottomMiddle2 setPosition:CGPointMake(305, 230)]; //Horizontal middle bottom 2 line
-     bottomMiddle2.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomMiddle2.frame.size];
-     bottomMiddle2.physicsBody.dynamic =  NO;
-     bottomMiddle2.physicsBody.categoryBitMask = wallCategory;
-     bottomMiddle2.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-     [self addChild:bottomMiddle2];
+     SKSpriteNode *topLeftVertical = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 100)];
+     [topLeftVertical setPosition:CGPointMake(190, 734)]; //Vertical top left line
+     topLeftVertical.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topLeftVertical.frame.size];
+     topLeftVertical.physicsBody.dynamic =  NO;
+     topLeftVertical.physicsBody.categoryBitMask = wallCategory;
+     topLeftVertical.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+     [self addChild:topLeftVertical];
      
-     SKSpriteNode *bottomMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(330, 8)];
-     [bottomMiddle1 setPosition:CGPointMake(465, 110)]; //Horizontal middle bottom 1 line
-     bottomMiddle1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomMiddle1.frame.size];
-     bottomMiddle1.physicsBody.dynamic =  NO;
-     bottomMiddle1.physicsBody.categoryBitMask = wallCategory;
-     bottomMiddle1.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-     [self addChild:bottomMiddle1];
+     SKSpriteNode *topRightHorizontal = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(100, 8)];
+     [topRightHorizontal setPosition:CGPointMake(634, 680)]; //Horizontal top right line
+     topRightHorizontal.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topRightHorizontal.frame.size];
+     topRightHorizontal.physicsBody.dynamic =  NO;
+     topRightHorizontal.physicsBody.categoryBitMask = wallCategory;
+     topRightHorizontal.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+     [self addChild:topRightHorizontal];
      
-     SKSpriteNode *leftMiddle = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 500)];
-     [leftMiddle setPosition:CGPointMake(270, 600)]; //Vertical middle left line
-     leftMiddle.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:leftMiddle.frame.size];
-     leftMiddle.physicsBody.dynamic =  NO;
-     leftMiddle.physicsBody.categoryBitMask = wallCategory;
-     leftMiddle.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-     [self addChild:leftMiddle];
+     SKSpriteNode *topLeftHorizontal = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(100, 8)];
+     [topLeftHorizontal setPosition:CGPointMake(270, 600)]; //Horizontal top left line
+     topLeftHorizontal.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topLeftHorizontal.frame.size];
+     topLeftHorizontal.physicsBody.dynamic =  NO;
+     topLeftHorizontal.physicsBody.categoryBitMask = wallCategory;
+     topLeftHorizontal.physicsBody.contactTestBitMask = wallCategory | ballCategory;
+     [self addChild:topLeftHorizontal];
      
-     SKSpriteNode *topMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(380, 8)];
+     /*SKSpriteNode *topMiddle1 = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(380, 8)];
      [topMiddle1 setPosition:CGPointMake(456, 847)]; //Horizontal top middle line
      topMiddle1.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:topMiddle1.frame.size];
      topMiddle1.physicsBody.dynamic =  NO;
