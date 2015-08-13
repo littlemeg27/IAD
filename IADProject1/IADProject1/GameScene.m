@@ -9,8 +9,12 @@
 #import "GameScene.h"
 #import "GameOverScene.h"
 #import "GameWinScene.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface GameScene ()
+{
+    CMMotionManager *motion; //Gets in the four types of motion
+}
 
 @property (nonatomic) SKShapeNode *ball;
 @property (nonatomic) SKShapeNode *pause;
@@ -28,22 +32,14 @@ static const uint32_t ballCategory = 8;
 static const uint32_t hole2Category = 16;
 static const uint32_t winCategory = 32;
 
-@import CoreMotion;
-
-
 @implementation GameScene
-
-CMMotionManager *motion; //Gets in the four types of motion
-
 
 -(id)initWithSize:(CGSize)size
 {
     if (self = [super initWithSize:size])
     {
         /* Setup your scene here */
-        SKSpriteNode *background = [SKSpriteNode spriteNodeWithImageNamed:@"featherBackground.jpg"];
-        background.position = CGPointMake(self.size.width/2, self.size.height/2);
-        
+        self.backgroundColor = [SKColor brownColor];
         self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         self.physicsBody.categoryBitMask = edgeCategory;
         self.physicsWorld.contactDelegate = self; //Might need for later

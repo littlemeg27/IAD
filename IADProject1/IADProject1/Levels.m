@@ -38,23 +38,23 @@
         self.levelOneLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.levelOneLabel.text = @"Level 1";
         self.levelOneLabel.fontColor = [SKColor whiteColor];
-        self.levelOneLabel.fontSize = 20;
+        self.levelOneLabel.fontSize = 25;
         self.levelOneLabel.name = @"button1";
-        self.levelOneLabel.position = CGPointMake(CGRectGetMidX(self.frame),900);
+        self.levelOneLabel.position = CGPointMake(CGRectGetMidX(self.frame),800);
         [self addChild:self.levelOneLabel];
         
         self.levelTwoLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.levelTwoLabel.text = @"Level 2";
         self.levelTwoLabel.fontColor = [SKColor whiteColor];
-        self.levelTwoLabel.fontSize = 20;
+        self.levelTwoLabel.fontSize = 25;
         self.levelTwoLabel.name = @"button2";
-        self.levelTwoLabel.position = CGPointMake(CGRectGetMidX(self.frame),800);
+        self.levelTwoLabel.position = CGPointMake(CGRectGetMidX(self.frame),700);
         [self addChild:self.levelTwoLabel];
         
         self.levelThreeLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.levelThreeLabel.text = @"Level 3";
         self.levelThreeLabel.fontColor = [SKColor whiteColor];
-        self.levelThreeLabel.fontSize = 20;
+        self.levelThreeLabel.fontSize = 25;
         self.levelThreeLabel.name = @"button3";
         self.levelThreeLabel.position = CGPointMake(CGRectGetMidX(self.frame),600);
         [self addChild:self.levelThreeLabel];
@@ -62,7 +62,7 @@
         self.levelFourLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.levelFourLabel.text = @"Level 4";
         self.levelFourLabel.fontColor = [SKColor whiteColor];
-        self.levelFourLabel.fontSize = 20;
+        self.levelFourLabel.fontSize = 25;
         self.levelFourLabel.name = @"button4";
         self.levelFourLabel.position = CGPointMake(CGRectGetMidX(self.frame),500);
         [self addChild:self.levelFourLabel];
@@ -70,7 +70,7 @@
         self.levelFiveLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.levelFiveLabel.text = @"Level 5";
         self.levelFiveLabel.fontColor = [SKColor whiteColor];
-        self.levelFiveLabel.fontSize = 20;
+        self.levelFiveLabel.fontSize = 25;
         self.levelFiveLabel.name = @"button5";
         self.levelFiveLabel.position = CGPointMake(CGRectGetMidX(self.frame),400);
         [self addChild:self.levelFiveLabel];
@@ -78,7 +78,7 @@
         self.levelSixLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
         self.levelSixLabel.text = @"Level 6";
         self.levelSixLabel.fontColor = [SKColor whiteColor];
-        self.levelSixLabel.fontSize = 20;
+        self.levelSixLabel.fontSize = 25;
         self.levelSixLabel.name = @"button6";
         self.levelSixLabel.position = CGPointMake(CGRectGetMidX(self.frame),300);
         [self addChild:self.levelSixLabel];
@@ -88,7 +88,7 @@
         self.backLabelLabel.fontColor = [SKColor whiteColor];
         self.backLabelLabel.fontSize = 20;
         self.backLabelLabel.name = @"button7";
-        self.backLabelLabel.position = CGPointMake(50,900);
+        self.backLabelLabel.position = CGPointMake(75,900);
         [self addChild:self.backLabelLabel];
         
         

@@ -9,8 +9,13 @@
 #import "GameScene2.h"
 #import "GameOverScene.h"
 #import "GameWinScene.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface GameScene2 ()
+{
+    CMMotionManager *motion; //Gets in the four types of motion
+}
+//@import CoreMotion;
 
 @property (nonatomic) SKShapeNode *ball;
 @property (nonatomic) SKShapeNode *pause;
@@ -28,11 +33,9 @@ static const uint32_t ballCategory = 8;
 static const uint32_t hole2Category = 16;
 static const uint32_t winCategory = 32;
 
-@import CoreMotion;
+
 
 @implementation GameScene2
-
-CMMotionManager *motion; //Gets in the four types of motion
 
 
 -(id)initWithSize:(CGSize)size
@@ -114,7 +117,7 @@ CMMotionManager *motion; //Gets in the four types of motion
     middleLeft.physicsBody.contactTestBitMask = wallCategory | ballCategory;
     [self addChild:middleLeft];
     
-    /*SKSpriteNode *bottomLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
+    SKSpriteNode *bottomLeft = [SKSpriteNode spriteNodeWithColor:[SKColor blackColor] size:CGSizeMake(8, 350)];
     [bottomLeft setPosition:CGPointMake(140, 175)]; //Vertical bottom left line
     bottomLeft.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:bottomLeft.frame.size];
     bottomLeft.physicsBody.dynamic =  NO;
@@ -208,13 +211,13 @@ CMMotionManager *motion; //Gets in the four types of motion
     bottomMiddle3.physicsBody.dynamic =  NO;
     bottomMiddle3.physicsBody.categoryBitMask = wallCategory;
     bottomMiddle3.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:bottomMiddle3]; */
+    [self addChild:bottomMiddle3];
 }
 
 
 -(void) addHoles:(CGSize) size
 {
-    /*float radius = 32;
+    float radius = 32;
     SKShapeNode *hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
     hole1.position = ballPoint1;
@@ -286,12 +289,12 @@ CMMotionManager *motion; //Gets in the four types of motion
     hole8.strokeColor = [SKColor blackColor]; //Hole 8
     hole8.physicsBody.categoryBitMask = holeCategory;
     hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:hole8]; */
+    [self addChild:hole8];
 }
 
 -(void) addNodes:(CGSize) size
 {
-    /*float radius = 28;
+    float radius = 28;
     SKNode *hole1 = [SKNode node];
     hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
     CGPoint ballPoint1 = CGPointMake(35,510);
@@ -349,7 +352,7 @@ CMMotionManager *motion; //Gets in the four types of motion
     SKNode *endBox = [SKNode node];
     endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(140, 100)];
     endBox.physicsBody.categoryBitMask = winCategory;
-    [self addChild: endBox]; */
+    [self addChild: endBox];
     
 }
 
