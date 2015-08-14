@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7A4E60C9-EE44-478E-A703-BF63EE28D411</string>
 	<key>IDESourceControlProjectName</key>
-	<string>IADProject1</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BB7C79724F93DCD8B6C864517376E3A51FC00D30</key>
 		<string>https://github.com/littlemeg27/IAD.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IADProject1/IADProject1.xcodeproj</string>
+	<string>IADProject1/IADProject1.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BB7C79724F93DCD8B6C864517376E3A51FC00D30</key>
