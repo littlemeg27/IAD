@@ -93,6 +93,25 @@ static const uint32_t winCategory = 32;
     self.ball.physicsBody.categoryBitMask = ballCategory;
     self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
     [self addChild:self.ball];
+    
+    SKShapeNode *ball2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint2 = CGPointMake(300,300);
+    ball2.position = ballPoint2;
+    ball2.fillColor = [SKColor purpleColor];
+    ball2.strokeColor = [SKColor blackColor];
+    ball2.physicsBody.categoryBitMask = ballCategory;
+    ball2.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
+    [self addChild:ball2];
+    
+    int minDuration = 2.0;
+    int maxDuration = 50.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    //Create the actions
+    SKAction *moveBall =  [SKAction moveByX:100.0 y:100.0 duration:actualDuration];
+    SKAction *moveBallDone = [SKAction removeFromParent];
+    [ball2 runAction:[SKAction sequence:@[moveBall, moveBallDone]]];
 }
 
 -(void) addWalls:(CGSize) size

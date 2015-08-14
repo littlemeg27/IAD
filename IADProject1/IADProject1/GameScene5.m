@@ -84,6 +84,25 @@ static const uint32_t winCategory = 32;
     self.ball.physicsBody.categoryBitMask = ballCategory;
     self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
     [self addChild:self.ball];
+    
+    SKShapeNode *ball2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint2 = CGPointMake(size.width/2,size.height/2);
+    ball2.position = ballPoint2;
+    ball2.fillColor = [SKColor purpleColor];
+    ball2.strokeColor = [SKColor blackColor];
+    ball2.physicsBody.categoryBitMask = ballCategory;
+    ball2.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
+    [self addChild:ball2];
+    
+    int minDuration = 2.0;
+    int maxDuration = 50.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    //Create the actions
+    SKAction *moveBall =  [SKAction moveByX:100.0 y:100.0 duration:actualDuration];
+    SKAction *moveBallDone = [SKAction removeFromParent];
+    [ball2 runAction:[SKAction sequence:@[moveBall, moveBallDone]]];
 }
 
 -(void) addWalls:(CGSize) size
@@ -229,9 +248,9 @@ static const uint32_t winCategory = 32;
 
 -(void) addHoles:(CGSize) size
 {
-    /*float radius = 28;
+    float radius = 28;
     SKShapeNode *hole1 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint1 = CGPointMake(35,510);
+    CGPoint ballPoint1 = CGPointMake(30,915);
     hole1.position = ballPoint1;
     hole1.fillColor = [SKColor grayColor]; //Right after start left corner
     hole1.strokeColor = [SKColor blackColor]; //Hole 1
@@ -241,7 +260,7 @@ static const uint32_t winCategory = 32;
     [self addChild:hole1];
     
     SKShapeNode *hole2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint2 = CGPointMake(230,510);
+    CGPoint ballPoint2 = CGPointMake(495,825);
     hole2.position = ballPoint2;
     hole2.fillColor = [SKColor grayColor]; //Right after start right corner
     hole2.strokeColor = [SKColor blackColor]; //Hole 2
@@ -250,7 +269,7 @@ static const uint32_t winCategory = 32;
     [self addChild:hole2];
     
     SKShapeNode *hole3 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint3 = CGPointMake(180,910);
+    CGPoint ballPoint3 = CGPointMake(735,465);
     hole3.position = ballPoint3;
     hole3.fillColor = [SKColor grayColor]; //Upper left corner third turn
     hole3.strokeColor = [SKColor blackColor]; //Hole 3
@@ -259,7 +278,7 @@ static const uint32_t winCategory = 32;
     [self addChild:hole3];
     
     SKShapeNode *hole4 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint4 = CGPointMake(730,910);
+    CGPoint ballPoint4 = CGPointMake(250,465);
     hole4.position = ballPoint4;
     hole4.fillColor = [SKColor grayColor]; //Upper right corner
     hole4.strokeColor = [SKColor blackColor]; //Hole 4
@@ -268,7 +287,7 @@ static const uint32_t winCategory = 32;
     [self addChild:hole4];
     
     SKShapeNode *hole5 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint5 = CGPointMake(310,390);
+    CGPoint ballPoint5 = CGPointMake(390,715);
     hole5.position = ballPoint5;
     hole5.fillColor = [SKColor grayColor]; //Middle left corner
     hole5.strokeColor = [SKColor blackColor]; //Hole 5
@@ -277,7 +296,7 @@ static const uint32_t winCategory = 32;
     [self addChild:hole5];
     
     SKShapeNode *hole6 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint6 = CGPointMake(590,455);
+    CGPoint ballPoint6 = CGPointMake(30,465);
     hole6.position = ballPoint6;
     hole6.fillColor = [SKColor grayColor]; //Middle right corner
     hole6.strokeColor = [SKColor blackColor]; //Hole 6
@@ -286,7 +305,7 @@ static const uint32_t winCategory = 32;
     [self addChild:hole6];
     
     SKShapeNode *hole7 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint7 = CGPointMake(590,150);
+    CGPoint ballPoint7 = CGPointMake(605,535);
     hole7.position = ballPoint7;
     hole7.fillColor = [SKColor grayColor];
     hole7.strokeColor = [SKColor blackColor]; //Hole 7
@@ -295,76 +314,76 @@ static const uint32_t winCategory = 32;
     [self addChild:hole7];
     
     SKShapeNode *hole8 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
-    CGPoint ballPoint8 = CGPointMake(180,190);
+    CGPoint ballPoint8 = CGPointMake(735,30);
     hole8.position = ballPoint8;
     hole8.fillColor = [SKColor grayColor];
     hole8.strokeColor = [SKColor blackColor]; //Hole 8
     hole8.physicsBody.categoryBitMask = holeCategory;
     hole8.physicsBody.contactTestBitMask = wallCategory | ballCategory;
-    [self addChild:hole8];*/
+    [self addChild:hole8];
 }
 
 -(void) addNodes:(CGSize) size
 {
-    /*float radius = 24;
+    float radius = 24;
     SKNode *hole1 = [SKNode node];
     hole1.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    CGPoint ballPoint1 = CGPointMake(35,510);
+    CGPoint ballPoint1 = CGPointMake(30,915);
     hole1.position = ballPoint1;
     hole1.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole1];
     
     SKNode *hole2 = [SKNode node];
-    CGPoint ballPoint2 = CGPointMake(230,510);
+    CGPoint ballPoint2 = CGPointMake(495,825);
     hole2.position = ballPoint2;
     hole2.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole2];
     
     SKNode *hole3 = [SKNode node];
-    CGPoint ballPoint3 = CGPointMake(180,910);
+    CGPoint ballPoint3 = CGPointMake(735,465);
     hole3.position = ballPoint3;
     hole3.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole3];
     
     SKNode *hole4 = [SKNode node];
     hole4.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    CGPoint ballPoint4 = CGPointMake(730,910);
+    CGPoint ballPoint4 = CGPointMake(250,465);
     hole4.position = ballPoint4;
     hole4.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole4];
     
     SKNode *hole5 = [SKNode node];
     hole5.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    CGPoint ballPoint5 = CGPointMake(310,390);
+    CGPoint ballPoint5 = CGPointMake(390,715);
     hole5.position = ballPoint5;
     hole5.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole5];
     
     SKNode *hole6 = [SKNode node];
     hole6.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    CGPoint ballPoint6 = CGPointMake(590,455);
+    CGPoint ballPoint6 = CGPointMake(30,465);
     hole6.position = ballPoint6;
     hole6.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole6];
     
     SKNode *hole7 = [SKNode node];
     hole7.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    CGPoint ballPoint7 = CGPointMake(590,150);
+    CGPoint ballPoint7 = CGPointMake(605,535);
     hole7.position = ballPoint7;
     hole7.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole7];
     
     SKNode *hole8 = [SKNode node];
     hole8.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:radius];
-    CGPoint ballPoint8 = CGPointMake(180,190);
+    CGPoint ballPoint8 = CGPointMake(735,30);
     hole8.position = ballPoint8;
     hole8.physicsBody.categoryBitMask = hole2Category;
     [self addChild: hole8];
     
     SKNode *endBox = [SKNode node];
-    endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(140, 100)];
+    endBox.physicsBody = [SKPhysicsBody bodyWithEdgeFromPoint:CGPointMake(0,100) toPoint:CGPointMake(110, 100)];
     endBox.physicsBody.categoryBitMask = winCategory;
-    [self addChild: endBox];*/
+    [self addChild: endBox];
     
 }
 
@@ -372,7 +391,7 @@ static const uint32_t winCategory = 32;
 {
     self.ball.hidden = NO;   //reset ball position for new game
     self.ball.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:self.ball.frame.size.width/2];
-    CGPoint ballPoint = CGPointMake(75,875);
+    CGPoint ballPoint = CGPointMake(750,900);
     self.ball.position = ballPoint;
     self.ball.physicsBody.dynamic = YES; //Not sitting still
     self.ball.physicsBody.affectedByGravity = NO; //Not affected

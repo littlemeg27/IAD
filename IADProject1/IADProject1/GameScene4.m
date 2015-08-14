@@ -84,6 +84,38 @@ static const uint32_t winCategory = 32;
     self.ball.physicsBody.categoryBitMask = ballCategory;
     self.ball.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
     [self addChild:self.ball];
+    
+    SKShapeNode *ball2 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint2 = CGPointMake(size.width/2,size.height/2);
+    ball2.position = ballPoint2;
+    ball2.fillColor = [SKColor purpleColor];
+    ball2.strokeColor = [SKColor blackColor];
+    ball2.physicsBody.categoryBitMask = ballCategory;
+    ball2.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
+    [self addChild:ball2];
+    
+    SKShapeNode *ball3 = [SKShapeNode shapeNodeWithCircleOfRadius:radius];
+    CGPoint ballPoint3 = CGPointMake(300,300);
+    ball3.position = ballPoint3;
+    ball3.fillColor = [SKColor purpleColor];
+    ball3.strokeColor = [SKColor blackColor];
+    ball3.physicsBody.categoryBitMask = ballCategory;
+    ball3.physicsBody.contactTestBitMask = wallCategory | holeCategory | hole2Category | winCategory;
+    [self addChild:ball3];
+    
+    int minDuration = 2.0;
+    int maxDuration = 50.0;
+    int rangeDuration = maxDuration - minDuration;
+    int actualDuration = (arc4random() % rangeDuration) + minDuration;
+    
+    //Create the actions
+    SKAction *moveBall2 =  [SKAction moveByX:100.0 y:100.0 duration:actualDuration];
+    SKAction *moveBallDone2 = [SKAction removeFromParent];
+    [ball2 runAction:[SKAction sequence:@[moveBall2, moveBallDone2]]];
+    
+    SKAction *moveBall3 =  [SKAction moveByX:100.0 y:100.0 duration:actualDuration];
+    SKAction *moveBallDone3 = [SKAction removeFromParent];
+    [ball3 runAction:[SKAction sequence:@[moveBall3, moveBallDone3]]];
 }
 
 -(void) addWalls:(CGSize) size
