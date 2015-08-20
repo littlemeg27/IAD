@@ -10,6 +10,20 @@
 #import "GameScene.h"
 #import "MainMenu.h"
 #import "GameScene5.h"
+#import "ActionSheet.h"
+
+@interface GameViewController ()
+
+@property (nonatomic) BOOL gameCenterEnabled;
+@property (nonatomic, strong) NSString *leaderboardIdentifier;
+@property (nonatomic) int lives;
+@property (nonatomic) int timerValue;
+
+-(void)reportScore;
+-(void)authenticateLocalPlayer;
+-(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard;
+
+@end
 
 @implementation SKScene (Unarchive)
 
@@ -52,6 +66,7 @@
     
     // Present the scene.
     [skView presentScene:scene];
+    [self authenticateLocalPlayer];
 }
 
 - (BOOL)shouldAutorotate
@@ -61,11 +76,59 @@
 
 - (NSUInteger)supportedInterfaceOrientations
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
         return UIInterfaceOrientationMaskAllButUpsideDown;
     } else {
         return UIInterfaceOrientationMaskAll;
     }
+}
+
+-(void)reportScore
+{
+    GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:_leaderboardIdentifier];
+    score.value = score;
+    
+    [GKScore reportScores:@[score] withCompletionHandler:^(NSError *error)
+    {
+        if (error != nil)
+        {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+    }];
+}
+
+- (IBAction)handleAnswer:(id)sender
+{
+    if (_lives == 0)
+    {
+        [self reportScore];
+    }
+}
+
+-(void)updateTimerLabel:(NSTimer *)timer
+{
+    if (_timerValue > 60)
+    {
+        [self reportScore];
+    }
+}
+
+-(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard
+{
+    GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
+    
+    gcViewController.gameCenterDelegate = self;
+    
+    if (shouldShowLeaderboard) {
+        gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
+        gcViewController.leaderboardIdentifier = _leaderboardIdentifier;
+    }
+    else{
+        gcViewController.viewState = GKGameCenterViewControllerStateAchievements;
+    }
+    
+    [self presentViewController:gcViewController animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,8 +137,69 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-- (BOOL)prefersStatusBarHidden {
+- (BOOL)prefersStatusBarHidden
+{
     return YES;
+}
+
+- (IBAction)showGCOptions:(id)sender
+{
+    [_ActionSheet showInView:self.view
+             withCompletionHandler:^(NSString *buttonTitle, NSInteger buttonIndex)
+    {
+                 
+        if([buttonTitle isEqualToString:@"View Leaderboard"])
+        {
+            [self showLeaderboardAndAchievements:YES];
+        }
+        else if([buttonTitle isEqualToString:@"View Achievements"])
+        {
+            [self showLeaderboardAndAchievements:NO];
+        }
+        else
+        {
+                     
+        }
+    }];
+}
+
+-(void)authenticateLocalPlayer
+{
+    GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
+    
+    localPlayer.authenticateHandler = ^(UIViewController *viewController, NSError *error)
+    {
+        if (viewController != nil)
+        {
+            [self presentViewController:viewController animated:YES completion:nil];
+        }
+        else
+        {
+            if ([GKLocalPlayer localPlayer].authenticated)
+            {
+                self.gameCenterEnabled = YES;
+                
+                // Get the default leaderboard identifier.
+                [[GKLocalPlayer localPlayer] loadDefaultLeaderboardIdentifierWithCompletionHandler:^(NSString *leaderboardIdentifier, NSError *error)
+                {
+                    
+                    if (error != nil)
+                    {
+                        NSLog(@"%@", [error localizedDescription]);
+                    }
+                    else
+                    {
+                        self.leaderboardIdentifier = leaderboardIdentifier;
+                    }
+                }];
+            }
+            
+            else
+            {
+                self.gameCenterEnabled = NO;
+            }
+        }
+    };
 }
 
 @end
