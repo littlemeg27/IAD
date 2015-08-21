@@ -31,7 +31,6 @@
 		BA47D1801B7B12B4001596A3 /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA47D17E1B7B12B4001596A3 /* explosion_small.caf */; };
 		BA47D1841B7C2A4A001596A3 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = BA47D1831B7C2A4A001596A3 /* wood.png */; };
 		BA9D9F0C1B83D49D00BEF84F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9D9F0B1B83D49D00BEF84F /* GameKit.framework */; };
-		BAF196F31B862D3B0059D341 /* ActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF196F21B862D3B0059D341 /* ActionSheet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +86,6 @@
 		BA47D17E1B7B12B4001596A3 /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_small.caf; path = ../explosion_small.caf; sourceTree = "<group>"; };
 		BA47D1831B7C2A4A001596A3 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wood.png; path = ../wood.png; sourceTree = "<group>"; };
 		BA9D9F0B1B83D49D00BEF84F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		BAF196F11B862D3B0059D341 /* ActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheet.h; sourceTree = "<group>"; };
-		BAF196F21B862D3B0059D341 /* ActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,8 +157,6 @@
 				BA47D1601B797E85001596A3 /* GameOverScene.m */,
 				BA47D13D1B796E7F001596A3 /* GameViewController.h */,
 				BA47D13E1B796E7F001596A3 /* GameViewController.m */,
-				BAF196F11B862D3B0059D341 /* ActionSheet.h */,
-				BAF196F21B862D3B0059D341 /* ActionSheet.m */,
 				BA47D13B1B796E7F001596A3 /* GameScene.sks */,
 				BA47D1831B7C2A4A001596A3 /* wood.png */,
 				BA47D17D1B7B12B4001596A3 /* shake.caf */,
@@ -325,7 +320,6 @@
 				BA47D1791B799207001596A3 /* GameScene6.m in Sources */,
 				BA47D16A1B798059001596A3 /* Tutorial.m in Sources */,
 				BA47D1701B7991AE001596A3 /* GameScene3.m in Sources */,
-				BAF196F31B862D3B0059D341 /* ActionSheet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +453,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -472,6 +467,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

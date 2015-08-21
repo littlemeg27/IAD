@@ -16,8 +16,9 @@
 
 @property (nonatomic) BOOL gameCenterEnabled;
 @property (nonatomic, strong) NSString *leaderboardIdentifier;
-@property (nonatomic) int lives;
+@property (nonatomic) int time;
 @property (nonatomic) int timerValue;
+@property (nonatomic) int64_t score;
 
 -(void)reportScore;
 -(void)authenticateLocalPlayer;
@@ -84,10 +85,10 @@
     }
 }
 
--(void)reportScore
+-(void)reportScore //Report the score that was made
 {
     GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:_leaderboardIdentifier];
-    score.value = score;
+    score.value = _score;
     
     [GKScore reportScores:@[score] withCompletionHandler:^(NSError *error)
     {
@@ -100,7 +101,7 @@
 
 - (IBAction)handleAnswer:(id)sender
 {
-    if (_lives == 0)
+    if (_time == 0)
     {
         [self reportScore];
     }
@@ -114,17 +115,19 @@
     }
 }
 
--(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard
+-(void)showLeaderboardAndAchievements:(BOOL)shouldShowLeaderboard //Shows the leaderboard
 {
     GKGameCenterViewController *gcViewController = [[GKGameCenterViewController alloc] init];
     
     gcViewController.gameCenterDelegate = self;
     
-    if (shouldShowLeaderboard) {
+    if (shouldShowLeaderboard)
+    {
         gcViewController.viewState = GKGameCenterViewControllerStateLeaderboards;
         gcViewController.leaderboardIdentifier = _leaderboardIdentifier;
     }
-    else{
+    else
+    {
         gcViewController.viewState = GKGameCenterViewControllerStateAchievements;
     }
     
@@ -142,28 +145,27 @@
     return YES;
 }
 
-- (IBAction)showGCOptions:(id)sender
+/*- (IBAction)showGCOptions:(id)sender
 {
-    [_ActionSheet showInView:self.view
+    [_customActionSheet showInView:self.view
              withCompletionHandler:^(NSString *buttonTitle, NSInteger buttonIndex)
     {
                  
-        if([buttonTitle isEqualToString:@"View Leaderboard"])
-        {
-            [self showLeaderboardAndAchievements:YES];
-        }
-        else if([buttonTitle isEqualToString:@"View Achievements"])
-        {
-            [self showLeaderboardAndAchievements:NO];
-        }
-        else
-        {
+                 if ([buttonTitle isEqualToString:@"View Leaderboard"])
+                 {
+                     [self showLeaderboardAndAchievements:YES];
+                 }
+                 else if ([buttonTitle isEqualToString:@"View Achievements"])
+                 {
+                     [self showLeaderboardAndAchievements:NO];
+                 }
+                 else{
                      
-        }
-    }];
-}
+                 }
+             }];
+}*/
 
--(void)authenticateLocalPlayer
+-(void)authenticateLocalPlayer //Make sure the player is real
 {
     GKLocalPlayer *localPlayer = [GKLocalPlayer localPlayer];
     

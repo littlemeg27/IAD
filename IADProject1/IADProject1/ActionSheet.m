@@ -19,10 +19,12 @@
 
 @implementation ActionSheet
 
--(id)initWithTitle:(NSString *)title delegate:(id<UIActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...{
+-(id)initWithTitle:(NSString *)title delegate:(id<UIActionSheetDelegate>)delegate cancelButtonTitle:(NSString *)cancelButtonTitle destructiveButtonTitle:(NSString *)destructiveButtonTitle otherButtonTitles:(NSString *)otherButtonTitles
+{
     
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _actionSheet = [[UIActionSheet alloc] initWithTitle:title
                                                    delegate:self
                                           cancelButtonTitle:nil
@@ -35,7 +37,7 @@
         while (currentButtonTitle != nil) {
             [_actionSheet addButtonWithTitle:currentButtonTitle];
             currentButtonTitle = va_arg(arguments, NSString *);
-        }
+    }
         va_end(arguments);
         
         
