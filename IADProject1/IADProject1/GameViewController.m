@@ -10,7 +10,6 @@
 #import "GameScene.h"
 #import "MainMenu.h"
 #import "GameScene5.h"
-#import "ActionSheet.h"
 
 @interface GameViewController ()
 
@@ -145,9 +144,10 @@
     return YES;
 }
 
-/*- (IBAction)showGCOptions:(id)sender
+-(IBAction)showGCOptions:(id)sender
 {
-    [_customActionSheet showInView:self.view
+    
+    [actionSheet showInView:self.view
              withCompletionHandler:^(NSString *buttonTitle, NSInteger buttonIndex)
     {
                  
