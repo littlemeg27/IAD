@@ -23,6 +23,9 @@
 @end
 
 @implementation MainMenu
+{
+    GameCenterManager* _gameCenterManager;
+}
 
 -(instancetype)initWithSize:(CGSize)size
 {
@@ -102,6 +105,20 @@
     }
     
     
+}
+
+- (void)didMoveToView:(SKView *)view
+{
+    if ([GameCenterManager isGameCenterAvailable])
+    {
+        _gameCenterManager = [[GameCenterManager alloc] init];
+        [_gameCenterManager setDelegate:self];
+        [_gameCenterManager authenticateLocalUser];
+    }
+    else
+    {
+        // The current device does not support Game Center.
+    }
 }
 
 @end

@@ -7,7 +7,9 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <GameKit/GameKit.h>
+#import "GameCenterManager.h"
 
-@interface MainMenu : SKScene
+@interface MainMenu : SKScene <GKGameCenterControllerDelegate, GameCenterManagerDelegate>
 
 @end

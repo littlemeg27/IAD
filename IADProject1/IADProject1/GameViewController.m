@@ -47,9 +47,6 @@
 
 @implementation GameViewController
 
-NSString *buttonTitle;
-NSInteger buttonIndex;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -62,15 +59,6 @@ NSInteger buttonIndex;
 #endif
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
-    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                  initWithTitle:@"Delegate"
-                                  delegate:self
-                                  cancelButtonTitle:@"Cancel"
-                                  destructiveButtonTitle:@"Destructive Button"
-                                  otherButtonTitles:@"Other Button",nil];
-                                  
-    [actionSheet showInView:self.view];
     
     // Create and configure the scene.
     MainMenu *scene = [MainMenu sceneWithSize:skView.bounds.size];
@@ -96,7 +84,7 @@ NSInteger buttonIndex;
     }
 }
 
--(void)reportScore //Report the score that was made
+/*-(void)reportScore //Report the score that was made
 {
     GKScore *score = [[GKScore alloc] initWithLeaderboardIdentifier:_leaderboardIdentifier];
     score.value = _score;
@@ -156,28 +144,26 @@ NSInteger buttonIndex;
     return YES;
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+-(IBAction)showGCOptions:(id)sender
 {
-    NSLog(@"hello world!");
     
-    if ([buttonTitle isEqualToString:@"View Leaderboard"])
+    [actionSheet showInView:self.view
+             withCompletionHandler:^(NSString *buttonTitle, NSInteger buttonIndex)
     {
-        [self showLeaderboardAndAchievements:YES];
-    }
-    else if ([buttonTitle isEqualToString:@"View Achievements"])
-    {
-        [self showLeaderboardAndAchievements:NO];
-    }
-    else
-    {
-        
-    }
-}
-
--(void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController
-{
-    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
-}
+                 
+                 if ([buttonTitle isEqualToString:@"View Leaderboard"])
+                 {
+                     [self showLeaderboardAndAchievements:YES];
+                 }
+                 else if ([buttonTitle isEqualToString:@"View Achievements"])
+                 {
+                     [self showLeaderboardAndAchievements:NO];
+                 }
+                 else{
+                     
+                 }
+             }];
+}*/
 
 -(void)authenticateLocalPlayer //Make sure the player is real
 {

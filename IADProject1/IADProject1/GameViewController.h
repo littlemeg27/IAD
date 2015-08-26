@@ -10,7 +10,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import <GameKit/GameKit.h>
 
-@interface GameViewController : UIViewController <GKGameCenterControllerDelegate, UIActionSheetDelegate>
+@interface GameViewController : UIViewController <GKGameCenterControllerDelegate>
 
 
 @end

@@ -31,6 +31,7 @@
 		BA47D1801B7B12B4001596A3 /* explosion_small.caf in Resources */ = {isa = PBXBuildFile; fileRef = BA47D17E1B7B12B4001596A3 /* explosion_small.caf */; };
 		BA47D1841B7C2A4A001596A3 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = BA47D1831B7C2A4A001596A3 /* wood.png */; };
 		BA9D9F0C1B83D49D00BEF84F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9D9F0B1B83D49D00BEF84F /* GameKit.framework */; };
+		BAC3D1381B8E0F96006D392D /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3D1351B8E0F96006D392D /* GameCenterManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,9 @@
 		BA47D17E1B7B12B4001596A3 /* explosion_small.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = explosion_small.caf; path = ../explosion_small.caf; sourceTree = "<group>"; };
 		BA47D1831B7C2A4A001596A3 /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wood.png; path = ../wood.png; sourceTree = "<group>"; };
 		BA9D9F0B1B83D49D00BEF84F /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		BAC3D1351B8E0F96006D392D /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
+		BAC3D1361B8E0F96006D392D /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
+		BAC3D1371B8E0F96006D392D /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSpecificValues.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,9 @@
 				BA47D1601B797E85001596A3 /* GameOverScene.m */,
 				BA47D13D1B796E7F001596A3 /* GameViewController.h */,
 				BA47D13E1B796E7F001596A3 /* GameViewController.m */,
+				BAC3D1351B8E0F96006D392D /* GameCenterManager.m */,
+				BAC3D1361B8E0F96006D392D /* GameCenterManager.h */,
+				BAC3D1371B8E0F96006D392D /* AppSpecificValues.h */,
 				BA47D13B1B796E7F001596A3 /* GameScene.sks */,
 				BA47D1831B7C2A4A001596A3 /* wood.png */,
 				BA47D17D1B7B12B4001596A3 /* shake.caf */,
@@ -309,6 +316,7 @@
 				BA47D13F1B796E7F001596A3 /* GameViewController.m in Sources */,
 				BA47D1671B797FBF001596A3 /* Credits.m in Sources */,
 				BA47D1731B7991C3001596A3 /* GameScene4.m in Sources */,
+				BAC3D1381B8E0F96006D392D /* GameCenterManager.m in Sources */,
 				BA47D17C1B7AE192001596A3 /* Levels.m in Sources */,
 				BA47D16D1B799134001596A3 /* GameScene2.m in Sources */,
 				BA47D1371B796E7F001596A3 /* AppDelegate.m in Sources */,
