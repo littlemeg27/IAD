@@ -103,8 +103,19 @@
             [self.view presentScene:levels transition:[SKTransition fadeWithDuration:1.0]];
         }
     }
-    
-    
+}
+
+-(void)showLeaderboard
+{
+    GKGameCenterViewController *leaderboardController = [[GKGameCenterViewController alloc] init];
+    if (leaderboardController != NULL)
+    {
+        leaderboardController.leaderboardIdentifier = @"1";
+        leaderboardController.viewState = GKGameCenterViewControllerStateLeaderboards;
+        leaderboardController.gameCenterDelegate = self;
+        UIViewController *vc = self.view.window.rootViewController;
+        [vc presentViewController: leaderboardController animated: YES completion:nil];
+    }
 }
 
 - (void)didMoveToView:(SKView *)view
@@ -120,5 +131,13 @@
         // The current device does not support Game Center.
     }
 }
+
+- (void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)viewController
+{
+    UIViewController *vc = self.view.window.rootViewController;
+    [vc dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 @end
