@@ -108,6 +108,7 @@
 -(void)showLeaderboard
 {
     GKGameCenterViewController *leaderboardController = [[GKGameCenterViewController alloc] init];
+    
     if (leaderboardController != NULL)
     {
         leaderboardController.leaderboardIdentifier = @"1";
