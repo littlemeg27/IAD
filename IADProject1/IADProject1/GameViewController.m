@@ -47,6 +47,9 @@
 
 @implementation GameViewController
 
+NSString *buttonTitle;
+NSInteger buttonIndex;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -59,6 +62,15 @@
 #endif
     /* Sprite Kit applies additional optimizations to improve rendering performance */
     skView.ignoresSiblingOrder = YES;
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Delegate"
+                                  delegate:self
+                                  cancelButtonTitle:@"Cancel"
+                                  destructiveButtonTitle:@"Destructive Button"
+                                  otherButtonTitles:@"Other Button",nil];
+                                  
+    [actionSheet showInView:self.view];
     
     // Create and configure the scene.
     MainMenu *scene = [MainMenu sceneWithSize:skView.bounds.size];
@@ -144,26 +156,28 @@
     return YES;
 }
 
--(IBAction)showGCOptions:(id)sender
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    NSLog(@"hello world!");
     
-    [actionSheet showInView:self.view
-             withCompletionHandler:^(NSString *buttonTitle, NSInteger buttonIndex)
+    if ([buttonTitle isEqualToString:@"View Leaderboard"])
     {
-                 
-                 if ([buttonTitle isEqualToString:@"View Leaderboard"])
-                 {
-                     [self showLeaderboardAndAchievements:YES];
-                 }
-                 else if ([buttonTitle isEqualToString:@"View Achievements"])
-                 {
-                     [self showLeaderboardAndAchievements:NO];
-                 }
-                 else{
-                     
-                 }
-             }];
-}*/
+        [self showLeaderboardAndAchievements:YES];
+    }
+    else if ([buttonTitle isEqualToString:@"View Achievements"])
+    {
+        [self showLeaderboardAndAchievements:NO];
+    }
+    else
+    {
+        
+    }
+}
+
+-(void)gameCenterViewControllerDidFinish:(GKGameCenterViewController *)gameCenterViewController
+{
+    [gameCenterViewController dismissViewControllerAnimated:YES completion:nil];
+}
 
 -(void)authenticateLocalPlayer //Make sure the player is real
 {
