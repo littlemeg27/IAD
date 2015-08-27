@@ -449,12 +449,14 @@ static const uint32_t winCategory = 32;
         
         GameOverScene *gameOver = [GameOverScene sceneWithSize:self.size];
         [self.view presentScene:gameOver transition:[SKTransition fadeWithDuration:2.0]]; //What happens when you lose
+        [Achievements reportingAchievements:@"com.RavenDesign.labyrinth.level1Lose" percentComplete:50.0f];
     }
     
     if (notBall.categoryBitMask == winCategory)
     {
         GameWinScene *gameWin = [GameWinScene sceneWithSize:self.size];
         [self.view presentScene:gameWin transition:[SKTransition fadeWithDuration:2.0]]; //What happens when you win
+        [Achievements reportingAchievements:@"com.RavenDesign.labyrinth.level1Win" percentComplete:100.0f];
     }
     
 }

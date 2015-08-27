@@ -13,6 +13,6 @@
 
 @interface Achievements : NSObject
 
-+(GKAchievement *)reportingAchievements:(NSString*) identifier percentComplete:(float) percent;
++(void)reportingAchievements:(NSString*) identifier percentComplete:(float) percent;
 
 @end
