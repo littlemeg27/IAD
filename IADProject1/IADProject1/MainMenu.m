@@ -19,6 +19,7 @@
 @property (nonatomic) SKLabelNode *creditsLabel;
 @property (nonatomic) SKLabelNode *instructionsLabel;
 @property (nonatomic) SKLabelNode *levelsLabel;
+@property (nonatomic) SKLabelNode *GCLabel;
 
 @end
 
@@ -45,7 +46,7 @@
         self.playLabel.fontColor = [SKColor whiteColor];
         self.playLabel.fontSize = 30;
         self.playLabel.name = @"button1";
-        self.playLabel.position = CGPointMake(CGRectGetMidX(self.frame),600);
+        self.playLabel.position = CGPointMake(CGRectGetMidX(self.frame),700);
         [self addChild:self.playLabel];
         
         self.creditsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -53,7 +54,7 @@
         self.creditsLabel.fontColor = [SKColor whiteColor];
         self.creditsLabel.fontSize = 30;
         self.creditsLabel.name = @"button2";
-        self.creditsLabel.position = CGPointMake(CGRectGetMidX(self.frame),500);
+        self.creditsLabel.position = CGPointMake(CGRectGetMidX(self.frame),600);
         [self addChild:self.creditsLabel];
         
         self.instructionsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -61,7 +62,7 @@
         self.instructionsLabel.fontColor = [SKColor whiteColor];
         self.instructionsLabel.fontSize = 30;
         self.instructionsLabel.name = @"button3";
-        self.instructionsLabel.position = CGPointMake(CGRectGetMidX(self.frame),400);
+        self.instructionsLabel.position = CGPointMake(CGRectGetMidX(self.frame),500);
         [self addChild:self.instructionsLabel];
         
         self.levelsLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
@@ -69,8 +70,16 @@
         self.levelsLabel.fontColor = [SKColor whiteColor];
         self.levelsLabel.fontSize = 30;
         self.levelsLabel.name = @"button4";
-        self.levelsLabel.position = CGPointMake(CGRectGetMidX(self.frame),300);
+        self.levelsLabel.position = CGPointMake(CGRectGetMidX(self.frame),400);
         [self addChild:self.levelsLabel];
+        
+        self.GCLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
+        self.GCLabel.text = @"Game Center";
+        self.GCLabel.fontColor = [SKColor whiteColor];
+        self.GCLabel.fontSize = 30;
+        self.GCLabel.name = @"button5";
+        self.GCLabel.position = CGPointMake(CGRectGetMidX(self.frame),300);
+        [self addChild:self.GCLabel];
     }
     return self;
 }
@@ -101,6 +110,10 @@
         {
             Levels *levels = [Levels sceneWithSize:self.size];
             [self.view presentScene:levels transition:[SKTransition fadeWithDuration:1.0]];
+        }
+        else if ([node.name isEqualToString:@"button5"])
+        {
+            [self showLeaderboard];
         }
     }
 }
