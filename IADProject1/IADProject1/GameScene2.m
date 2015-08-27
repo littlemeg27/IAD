@@ -11,6 +11,7 @@
 #import "GameWinScene.h"
 #import "MainMenu.h"
 #import <CoreMotion/CoreMotion.h>
+#include "Achievements.h"
 
 @interface GameScene2 ()
 {

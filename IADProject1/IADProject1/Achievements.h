@@ -13,8 +13,6 @@
 
 @interface Achievements : NSObject
 
-(GKAchievement *)AchievementLevels:(NSUInteger)AchievementLevels;
-
-//+(GKAchievement *)reportingAchievements:(NSString*) identifier percentComplete:(float) percent;
++(GKAchievement *)reportingAchievements:(NSString*) identifier percentComplete:(float) percent;
 
 @end
