@@ -9,6 +9,7 @@
 #import "GameScene4.h"
 #import "GameOverScene.h"
 #import "GameWinScene.h"
+#import "MainMenu.h"
 #import <CoreMotion/CoreMotion.h>
 
 @interface GameScene4 ()

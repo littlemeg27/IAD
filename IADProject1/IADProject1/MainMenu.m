@@ -132,6 +132,24 @@
     }
 }
 
+- (void) reportAchievement: (NSString*) identifier percentComplete: (float) percent
+{
+    GKAchievement *achievement = [[GKAchievement alloc] initWithIdentifier: identifier];
+    if (achievement)
+    {
+        achievement.percentComplete = percent;
+        
+        [achievement reportAchievementWithCompletionHandler:^(NSError *error)
+        {
+            if (error != nil)
+            {
+                NSLog(@"Error with achievements: %@", error);
+            }
+        }];
+        achievement.showsCompletionBanner = YES;
+    }
+}
+
 - (void)didMoveToView:(SKView *)view
 {
     if ([GameCenterManager isGameCenterAvailable])
@@ -142,6 +160,7 @@
     }
     else
     {
+        //_gameCenterManager.viewState = GKGameCenterViewControllerStateAchievements;
         // The current device does not support Game Center.
     }
 }

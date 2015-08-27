@@ -32,6 +32,7 @@
 		BA47D1841B7C2A4A001596A3 /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = BA47D1831B7C2A4A001596A3 /* wood.png */; };
 		BA9D9F0C1B83D49D00BEF84F /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA9D9F0B1B83D49D00BEF84F /* GameKit.framework */; };
 		BAC3D1381B8E0F96006D392D /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3D1351B8E0F96006D392D /* GameCenterManager.m */; };
+		BAC3D13B1B8F7075006D392D /* Achievements.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC3D13A1B8F7075006D392D /* Achievements.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		BAC3D1351B8E0F96006D392D /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		BAC3D1361B8E0F96006D392D /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
 		BAC3D1371B8E0F96006D392D /* AppSpecificValues.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSpecificValues.h; sourceTree = "<group>"; };
+		BAC3D1391B8F7075006D392D /* Achievements.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Achievements.h; sourceTree = "<group>"; };
+		BAC3D13A1B8F7075006D392D /* Achievements.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Achievements.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 				BA47D1781B799207001596A3 /* GameScene6.m */,
 				BA47D1621B797F77001596A3 /* MainMenu.h */,
 				BA47D1631B797F77001596A3 /* MainMenu.m */,
+				BAC3D1391B8F7075006D392D /* Achievements.h */,
+				BAC3D13A1B8F7075006D392D /* Achievements.m */,
 				BA47D1681B798059001596A3 /* Tutorial.h */,
 				BA47D1691B798059001596A3 /* Tutorial.m */,
 				BA47D1651B797FBF001596A3 /* Credits.h */,
@@ -313,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA47D1641B797F77001596A3 /* MainMenu.m in Sources */,
+				BAC3D13B1B8F7075006D392D /* Achievements.m in Sources */,
 				BA47D13F1B796E7F001596A3 /* GameViewController.m in Sources */,
 				BA47D1671B797FBF001596A3 /* Credits.m in Sources */,
 				BA47D1731B7991C3001596A3 /* GameScene4.m in Sources */,
